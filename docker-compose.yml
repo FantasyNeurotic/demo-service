@@ -1,0 +1,21 @@
+version: '3.0'
+
+services:
+  postgres:
+    container_name: demo-postgres
+    image: "postgres:latest"
+    restart: always
+    hostname: postgres
+    # pg 端口映射
+    ports:
+     - "16001:5432"
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_DB: demo
+      POSTGRES_INITDB_ARGS: --locale=en_US.UTF-8 --encoding=utf8
+      POSTGRES_PASSWORD: S3p5OKplVRkOcmQC
+      POSTGRES_ADMIN_USER: admin
+      POSTGRES_ADMIN_PASSWORD: bart
+    volumes:
+      - "./share/pgdata:/var/lib/postgresql/data"
+    

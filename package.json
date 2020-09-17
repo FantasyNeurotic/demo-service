@@ -1,0 +1,81 @@
+{
+  "name": "demo-services",
+  "version": "0.0.1",
+  "description": "一个专注于业务且代码易于理解的demo",
+  "main": "app.js",
+  "scripts": {
+    "start": "npx sequelize db:migrate && node .",
+    "migration:make": "npx sequelize migration:generate --name",
+    "migrate": "npx sequelize db:migrate",
+    "migrate:rollback": "npx sequelize db:migrate:undo",
+    "migrate:reset": "npx sequelize db:migrate:undo:all",
+    "migrate:refresh": "npx sequelize db:migrate:undo:all && npx sequelize db:migrate"
+  },
+  "precommit": [
+    "build"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FantasyNeurotic/demo-service.git"
+  },
+  "keywords": [
+    "koa",
+    "joi",
+    "casbin",
+    "abac",
+    "swagger",
+    "validation",
+    "api-docs",
+    "e2e test"
+  ],
+  "author": "FantasyNeurotic",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/FantasyNeurotic/demo-service/issues"
+  },
+  "homepage": "https://github.com/FantasyNeurotic/demo-service#readme",
+  "dependencies": {
+    "@hapi/boom": "9.1.0",
+    "bcryptjs": "2.4.3",
+    "bull": "3.16.0",
+    "casbin": "5.0.6",
+    "casbin-sequelize-adapter": "2.1.0",
+    "compressing": "1.5.1",
+    "enjoi": "7.0.0",
+    "felicity": "5.0.1",
+    "iconv-lite": "0.6.2",
+    "joi-sequelize-support": "0.3.0",
+    "joi-to-json-schema-support": "^5.2.0",
+    "jsonwebtoken": "8.5.1",
+    "koa": "2.13.0",
+    "koa-authz": "3.0.1",
+    "koa-body": "4.2.0",
+    "koa-compose": "4.1.0",
+    "koa-compress": "5.0.1",
+    "koa-cors": "0.0.16",
+    "koa-joi-router-support": "^7.2.0",
+    "koa-logger": "3.2.1",
+    "koa-redis": "^4.0.1",
+    "koa-send": "^5.0.1",
+    "koa-session": "^6.0.0",
+    "path-to-regexp": "6.1.0",
+    "pg": "7.4.1",
+    "pg-hstore": "2.3.2",
+    "sequelize": "4.44.3",
+    "socket.io": "2.3.0",
+    "swagger-ui": "^3.32.5",
+    "swagger-ui-dist": "^3.32.5",
+    "uuid": "^8.3.0",
+    "sequelize-cli": "5.4.0"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "macaca-reporter": "^1.3.27",
+    "mocha": "^8.1.0",
+    "nyc": "^15.1.0",
+    "proxyquire": "^2.1.3",
+    "sequelize-mock-support": "^0.11.0",
+    "sinon": "^9.0.2",
+    "supertest": "^4.0.2"
+  }
+}
